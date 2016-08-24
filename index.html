@@ -11,12 +11,6 @@
 <body>
   <h1>Live Forex Rates</h1>
 
-  <div ng-controller="TimeCtrl" class="clock">
-    <em>{{clock | date: 'MMM dd, yyyy HH:mm:ss'}}</em>
-    <br>
-    <p style="text-align: center;">Currently trading in the <strong >{{ mkt_sessions }}</strong> session</p>
-  </div>
-
   <div ng-controller="DataCtrl">
     <table class="priceData table-striped table-bordered">
       <tr ng-repeat="e in data.query.results.rate">

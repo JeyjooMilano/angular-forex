@@ -1,10 +1,6 @@
 
-h1, .clock {
+h1 {
 	text-align: center;
-}
-
-.clock {
-	font-family: Consolas, monaco, monospace;
 }
 
 table.priceData {

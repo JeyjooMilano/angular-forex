@@ -1,6 +1,6 @@
 var app = angular.module('app', []);
 
-var pairsArray = ['CHFEUR', 'EURCHF', 'CHFUSD'];
+var pairsArray = ['CHFEUR', 'EURCHF', 'CHFUSD', 'GBPJPY'];
 var pairsQuery = "'" + pairsArray.join(",") + "'";
 
 app.controller('DataCtrl', function ($scope, $http, $timeout) {

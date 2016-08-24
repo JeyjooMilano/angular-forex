@@ -34,29 +34,3 @@ app.controller('DataCtrl', function ($scope, $http, $timeout) {
     $scope.intervalFunction();
 });
 
-app.controller('TimeCtrl', function($scope, $interval) {
-	var tick = function() {
-		$scope.clock = Date.now();
-	}
-	tick();
-	$interval(tick, 1000);
-
-	var utc = new Date().getUTCHours();
-	var getMktSession = function(utc) {
-		var mkt_sessions = [];
-
-		switch(mkt_sessions.join(', ')) {
-			case '22 23 0 1 2 3 4 5 6': mkt_sessions.push("Sydney");return mkt_sessions;
-			case '22 23 0 1 2 3 4 5': mkt_sessions.push("Wellington");return mkt_sessions;
-			case '0 1 2 3 4 5 6 7 8': mkt_sessions.push("Tokyo");return mkt_sessions;
-			case '1 2 3 4 5 6 7 8 9': mkt_sessions.push("Hong Kong");return mkt_sessions;
-			case '7 8 9 10 11 12 13 14 15': mkt_sessions.push("Frankfurt");return mkt_sessions;
-			case '8 9 10 11 12 13 14 15 16': mkt_sessions.push("London");return mkt_sessions;
-			case '13 14 15 16 17 18 19 20 21': mkt_sessions.push("New York");return mkt_sessions;
-			case '14 15 16 17 18 19 20 21 22': mkt_sessions.push("Chicago");return mkt_sessions;
-		}
-	}
-	$scope.mkt_sessions = getMktSession(utc);
-	$interval(getMktSession, 60000);
-});
-
